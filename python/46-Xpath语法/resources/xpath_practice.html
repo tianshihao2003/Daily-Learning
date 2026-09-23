@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xpath 练习页 - 修真人物速查</title>
+</head>
+<body>
+  <!-- 第一个 div：一个 h1 + 三个链接 -->
+  <div id="page-header" class="panel">
+    <h1>Xpath 练习页</h1>
+    <p class="desc">这份页面是专门用来练 Xpath 的，结构简单，方便对照表达式看结果。</p>
+    <ul class="links">
+      <li><a href="https://www.itcast.cn">黑马程序员</a></li>
+      <li><a href="https://www.baidu.com" target="_blank">百度一下</a></li>
+      <li><a>没有链接地址的纯文本</a></li>
+    </ul>
+  </div>
+
+  <!-- 第二个 div：三段文字，最后一段的文本是唯一的 -->
+  <div id="page-main" class="panel">
+    <p class="desc">段落一：我在第二个 div 里，是这个 div 的第一个 p。</p>
+    <p class="desc">段落二：我也是第二个 div 里的段落，排中间。</p>
+    <p class="xn">段落三：我是第二个 div 里最后一个 p，只有我能被末尾定位取到。</p>
+  </div>
+
+  <!-- 第三个 div：表格 + 图片 -->
+  <div id="page-table" class="panel">
+    <table>
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>性别</th>
+          <th>头像</th>
+          <th>修为</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>王林</td>
+          <td>男</td>
+          <td><img src="./img/1.png" alt="王林"></td>
+          <td>婴变期</td>
+        </tr>
+        <tr>
+          <td>李慕婉</td>
+          <td>女</td>
+          <td><img src="./img/2.png" alt="李慕婉"></td>
+          <td>元婴期</td>
+        </tr>
+        <tr>
+          <td>王卓</td>
+          <td>男</td>
+          <td><img src="./img/3.png" alt="王卓"></td>
+          <td>金丹期</td>
+        </tr>
+        <tr>
+          <td>柳眉</td>
+          <td>女</td>
+          <td><img src="./img/4.png" alt="柳眉"></td>
+          <td>筑基后期</td>
+        </tr>
+      </tbody>
+    </table>
+    <img class="banner" src="./img/banner.png" alt="页面横幅">
+  </div>
+</body>
+</html>
