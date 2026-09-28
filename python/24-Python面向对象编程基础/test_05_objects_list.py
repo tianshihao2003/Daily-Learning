@@ -8,3 +8,25 @@
 # ============================================
 
 # 在下面写你的代码：
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+    def __str__(self):
+        return f"{self.name} - {self.price}"
+    def __lt__(self, other):
+        return self.price < other.price
+
+# 创建 3 个商品对象放进一个列表，遍历列表打印每个商品
+Product1 = Product("商品A", 100)
+Product2 = Product("商品A", 100)
+Product3 = Product("商品B", 200)
+Product_list = [Product1, Product2, Product3]
+for Product in Product_list:
+    print(Product)
+
+# 找出价格最高的那件商品
+max_Product = max(Product_list)
+print(f"价格最高的商品是 {max_Product}")
+
+

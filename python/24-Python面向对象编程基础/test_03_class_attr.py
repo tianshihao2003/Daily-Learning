@@ -9,3 +9,18 @@
 # ============================================
 
 # 在下面写你的代码：
+class Student:
+    school_name = "清华大学"
+    count = 0
+    def __init__(self, name, score):
+        self.name = name
+        self.score = score
+        Student.count += 1
+
+student1 = Student("张三", 95)
+student2 = Student("李四", 55)
+student3 = Student("王五", 80)
+print(student1.name)
+print(student2.name)
+print(student3.name)
+print(Student.count)

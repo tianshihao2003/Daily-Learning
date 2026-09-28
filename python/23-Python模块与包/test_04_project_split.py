@@ -13,4 +13,31 @@
 
 # 在下面写你的代码：
 
+import utils.my_fun
+import utils.my_var
+from utils import my_fun
+from utils import my_var
+
+
+
+# 从"包.模块"里导入功能
+from utils.my_fun import print_line1
+from utils.my_var import PI, NAME
+
+print_line1()
+print(PI)
+print(NAME)
+
+print(my_fun.print_line1())
+print(my_fun.print_line2())
+print(my_fun.print_line3())
+print(my_var.PI)
+print(my_var.NAME)
+
+
+
+
+
+
+
 

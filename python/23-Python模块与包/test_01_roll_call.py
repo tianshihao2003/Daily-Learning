@@ -1,5 +1,5 @@
 # ============================================
-# 题目1：随机点名器（三种导入方式）
+# 题目2-1：随机点名器（三种导入方式）
 # ============================================
 # 完成以下操作：
 # 1. 准备一个 5 人名单
@@ -9,5 +9,16 @@
 # ============================================
 
 # 在下面写你的代码：
+
+names = ["Alice", "Bob", "Charlie", "David", "Eve"]
+
+import random
+print(random.choice(names))
+
+import random as r
+print(r.choice(names))
+
+from random import choice
+print(choice(names))
 
 

@@ -9,3 +9,21 @@
 # ============================================
 
 # 在下面写你的代码：
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+    def __str__(self):
+        return f"{self.name} {self.price}"
+    def __eq__(self, other):
+        return self.name == other.name and self.price == other.price
+
+Product1 = Product("商品A", 100)
+Product2 = Product("商品A", 100)
+Product3 = Product("商品B", 200)
+print(Product1)
+print(Product2)
+print(Product3)
+print(Product1 == Product2)
+print(Product1 == Product3)
+print(Product2 == Product3)

@@ -11,3 +11,34 @@
 # ============================================
 
 # 在下面写你的代码：
+
+class Student:
+    school = "清华大学"
+    def __init__(self, name, math, english, chinese):
+        self.name = name
+        self.math = math
+        self.english = english
+        self.chinese = chinese
+    def sum(self):
+        return self.math + self.english + self.chinese
+    def avg(self):
+        return round((self.math + self.english + self.chinese) / 3, 2)
+    def __str__(self):
+        return f"{self.name} {self.sum()} {self.avg()}"
+    def __lt__(self, other):
+        return self.sum() < other.sum()
+
+student1 = Student("张三", 90, 80, 70)
+student2 = Student("李四", 80, 90, 80)
+student3 = Student("王五", 95, 85, 95)
+student4 = Student("赵六", 85, 95, 85)
+
+student_list = [student1, student2, student3, student4]
+print(student_list)
+for student in student_list:
+    print(student)
+
+# 找出总分最高的学生
+max_student = max(student_list)
+print(f"总分最高的学生是 {max_student}")
+

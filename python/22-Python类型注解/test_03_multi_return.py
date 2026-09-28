@@ -1,5 +1,5 @@
 # ============================================
-# 题目3：给多返回值函数加类型注解
+# 题目2-3：给多返回值函数加类型注解
 # ============================================
 # 完成以下操作：
 # 1. 写函数 min_max_avg(scores)：一次返回最大值、最小值、平均值
@@ -8,5 +8,13 @@
 # ============================================
 
 # 在下面写你的代码：
+
+def min_max_avg(scores: list[int]) -> tuple[int, int, float | int]:
+    max_score = max(scores)
+    min_score = min(scores)
+    avg_score = sum(scores) / len(scores)
+    return (max_score, min_score, avg_score)
+scores = [85, 90, 95, 100]
+print(min_max_avg(scores))
 
 

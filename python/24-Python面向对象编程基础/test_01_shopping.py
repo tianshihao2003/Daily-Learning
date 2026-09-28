@@ -1,14 +1,12 @@
 # ============================================
-# 综合练习：购物车管理系统
+# 综合题：购物车管理系统
 # ============================================
 
 # ============================================
 # 第一步：定义商品类 Goods
 # ============================================
 # 1. 定义 __init__ 方法，初始化 name、price、num 属性
-# -> class Goods: def __init__(self, name, price, num):
 # 2. 定义 __str__ 方法，返回商品信息字符串
-# -> def __str__(self): return f"商品名称: {self.name}..."
 # ============================================
 
 # 在下面写你的代码：
@@ -190,105 +188,3 @@ if __name__ == '__main__':
 
 
 
-# ============================================
-# 完整参考答案（写完后取消注释对比）
-# ============================================
-
-# # 商品类
-# class Goods:
-#     def __init__(self, name, price, num):
-#         self.name = name
-#         self.price = price
-#         self.num = num
-#
-#     def __str__(self):
-#         return f"商品名称: {self.name}, 商品价格: {self.price}, 商品数量: {self.num}"
-#
-#     def update_info(self, price=None, num=None):
-#         if price is not None:
-#             self.price = price
-#         if num is not None:
-#             self.num = num
-#
-#
-# # 购物车系统类
-# class ShoppingCart:
-#     system_version = "1.0"
-#     system_name = "购物车管理系统"
-#
-#     def __init__(self):
-#         self.goods_list = []
-#
-#     def add_goods(self):
-#         name = input("请输入商品名称: ")
-#         for goods in self.goods_list:
-#             if goods.name == name:
-#                 print("该商品已在购物车中，添加失败!")
-#                 return
-#         price = float(input("请输入商品价格: "))
-#         num = int(input("请输入商品数量: "))
-#         if price >= 0 and num >= 0:
-#             goods = Goods(name, price, num)
-#             self.goods_list.append(goods)
-#             print("商品添加成功 ~")
-#         else:
-#             print("价格和数量必须为非负数!")
-#
-#     def update_goods(self):
-#         name = input("请输入要修改的商品名称: ")
-#         for goods in self.goods_list:
-#             if goods.name == name:
-#                 print(f"当前商品信息: {goods}")
-#                 price = float(input("请输入修改后的商品价格: "))
-#                 num = int(input("请输入修改后的商品数量: "))
-#                 if price >= 0 and num >= 0:
-#                     goods.update_info(price, num)
-#                     print("商品信息修改成功 ~")
-#                 else:
-#                     print("价格和数量必须为非负数!")
-#                 return
-#         print("未找到该商品，修改失败!")
-#
-#     def delete_goods(self):
-#         name = input("请输入要删除的商品名称: ")
-#         for goods in self.goods_list:
-#             if goods.name == name:
-#                 self.goods_list.remove(goods)
-#                 print("商品删除成功 ~")
-#                 return
-#         print("未找到该商品，删除失败!")
-#
-#     def query_all_goods(self):
-#         if not self.goods_list:
-#             print("购物车为空!")
-#             return
-#         print("购物车中的商品信息:")
-#         print("-" * 40)
-#         for goods in self.goods_list:
-#             print(goods)
-#         print("-" * 40)
-#         print(f"总计商品数量: {len(self.goods_list)}")
-#
-#     def run(self):
-#         print(f"欢迎使用{ShoppingCart.system_name} V{ShoppingCart.system_version}")
-#         while True:
-#             print()
-#             print("# " * 35)
-#             print("#       1.添加商品  2.修改商品  3.删除商品  4.查询购物车  5.退出系统        #")
-#             print("# " * 35)
-#             choice = input("请选择要执行的操作，输入1-5: ")
-#             match choice:
-#                 case "1": self.add_goods()
-#                 case "2": self.update_goods()
-#                 case "3": self.delete_goods()
-#                 case "4": self.query_all_goods()
-#                 case "5":
-#                     print("感谢使用购物车管理系统，再见!")
-#                     break
-#                 case _: print("输入错误，请选择1-5之间的菜单功能!")
-#
-#
-# # 测试
-# if __name__ == '__main__':
-#     shopping_cart = ShoppingCart()
-#     shopping_cart.run()

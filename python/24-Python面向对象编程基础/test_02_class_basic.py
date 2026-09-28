@@ -9,3 +9,19 @@
 # ============================================
 
 # 在下面写你的代码：
+class Student:
+    def __init__(self, name, score):
+        self.name = name
+        self.score = score
+    def print_grade(self):
+        if self.score >= 90:
+            print(f"{self.name}的等级是：优秀")
+        elif self.score >= 60:
+            print(f"{self.name}的等级是：及格")
+        else:
+            print(f"{self.name}的等级是：不及格")
+
+student1 = Student("张三", 95)
+student2 = Student("李四", 55)
+student1.print_grade()
+student2.print_grade()
