@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>把搜索表单排成"美观大气的一行"</title>
+
+		<!-- ============================================ -->
+		<!-- 题目2-2：把搜索表单排成"美观大气的一行" -->
+		<!-- ============================================ -->
+		<!-- 表单的结构和表单项已经写好（见 body：姓名输入框、性别下拉、职位下拉、查询按钮、清空按钮）。要求： -->
+		<!-- 1. 这些控件水平排成一行（现在它们是各占一行竖着堆的），并且垂直方向对齐 -->
+		<!-- 2. 控件之间留出统一的 10px 间距（不许一个个写右外边距） -->
+		<!-- 3. 输入框和下拉列表：宽 300px、内边距 5px（只影响这个表单里的控件） -->
+		<!-- 4. 按钮：内边距"上下 5px、左右 15px" -->
+		<!-- 5. 表单和上下内容之间留出 20px（上下各 20px、左右 0） -->
+		<!-- 6. 样式写在本文件 head 的 style 里（下面的写作区） -->
+		<!-- 7. 做完刷新页面：标签 + 控件 + 按钮在一条水平线上 -->
+		<!-- ============================================ -->
+
+		<style>
+			/* 在下面写你的代码： */
+
+		</style>
+	</head>
+	<body>
+		<form class="search-form" action="/search" method="post">
+			<label for="name">姓名：</label>
+			<input type="text" id="name" name="name" placeholder="请输入姓名">
+
+			<label for="gender">性别：</label>
+			<select id="gender" name="gender">
+				<option value=""></option>
+				<option value="1">男</option>
+				<option value="2">女</option>
+			</select>
+
+			<label for="position">职位：</label>
+			<select id="position" name="position">
+				<option value=""></option>
+				<option value="1">班主任</option>
+				<option value="2">讲师</option>
+				<option value="3">学工主管</option>
+				<option value="4">教研主管</option>
+				<option value="5">咨询师</option>
+			</select>
+
+			<button type="submit">查询</button>
+			<button type="reset">清空</button>
+		</form>
+	</body>
+</html>

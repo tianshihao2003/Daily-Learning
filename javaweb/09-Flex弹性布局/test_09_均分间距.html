@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>三个方块的间距散得均匀</title>
+
+		<!-- ============================================ -->
+		<!-- 题目2-2：三个方块的间距要"散得均匀" -->
+		<!-- ============================================ -->
+		<!-- 容器（id 是 container）里已经放了三个方块（class 是 item）。要求： -->
+		<!-- 1. 三个方块横着排成一行 -->
+		<!-- 2. 每个方块左右两侧的留白一样多（所以方块之间的空隙看起来是两端空隙的两倍） -->
+		<!-- 3. 不要给方块写外边距，全部交给容器控制 -->
+		<!-- 4. 样式写在本文件 head 里（下面的写作区） -->
+		<!-- 5. 做完和上一题的"两端贴边"效果对比一下：两端有没有空隙 -->
+		<!-- ============================================ -->
+
+		<style>
+			#container {
+				width: 500px;
+				height: 200px;
+				background-color: #f1eeee;
+			}
+			.item {
+				width: 80px;
+				height: 50px;
+				background-color: rgb(184, 246, 184);
+				border: 1px solid rgb(141, 138, 138);
+			}
+		</style>
+
+		<!-- 在下面写你的代码： -->
+
+	</head>
+	<body>
+		<div id="container">
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+		</div>
+	</body>
+</html>
