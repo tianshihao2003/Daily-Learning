@@ -1,0 +1,148 @@
+# ============================================================
+# test_113_docker-compose.yml
+# 第 113 篇《Docker项目部署与DockerCompose》练习文件（compose 文件写作区）
+# 用法：按每道题的注释需求，在"在下面写你的配置"下面写 yml 内容。
+# 注意：YAML 的缩进只能用空格，不要用 Tab；列表项以 - 开头。
+# 本文件只当草稿纸用，不需要真的执行。
+# ============================================================
+
+
+# ============================================================
+# 题目2-2：用 compose 一次拉起 mysql + 应用
+# ============================================================
+# 需求：
+# 写一份 docker-compose.yml，把两个服务一次拉起：
+#   · mysql：用 mysql:8 镜像，容器名 mysql，宿主机 3307 映射容器 3306，
+#            环境变量 TZ=Asia/Shanghai、MYSQL_ROOT_PASSWORD=123，
+#            把宿主机的 /usr/local/app/mysql/data、/usr/local/app/mysql/init、
+#            /usr/local/app/mysql/conf 分别挂到容器里的数据目录、初始化目录、配置目录；
+#   · 应用：镜像要"现场构建"（构建上下文是当前目录、用当前目录下的 Dockerfile），
+#            容器名 tlias-server，8080 映射 8080，启动顺序要在 mysql 之后；
+#   · 两个服务放进同一个自定义网络，网络真实名字就叫 itheima。
+# 另在下面的"回答区"回答两个问题：
+#   ① build 那段为什么要求 Dockerfile 和 yml 在同一目录？
+#   ② depends_on 能保证"mysql 已经能连了"吗？
+# 素材：
+#
+# ---- 素材开始 ----
+# 容器里的目标路径：
+#   数据目录 /var/lib/mysql
+#   初始化目录 /docker-entrypoint-initdb.d
+#   配置目录 /etc/mysql/conf.d
+# 可用字段：image / build(context、dockerfile) / container_name / ports /
+#          environment / volumes / networks / depends_on，以及顶层 networks。
+# ---- 素材结束 ----
+#
+# 检查点：① 两个服务都在 services: 下、缩进正确；
+#         ② volumes 的三条左右两边都写全（左边是宿主机绝对路径）；
+#         ③ build 用 context + dockerfile；
+#         ④ depends_on 写在应用服务里；
+#         ⑤ 网络在服务里引用 + 顶层声明 name: itheima；
+#         ⑥ 两个小问题答对。
+#
+# 在下面写你的配置：
+
+
+
+
+# ---- 回答区 ----
+# ① build 那段为什么要求 Dockerfile 和 yml 在同一目录：
+
+
+# ② depends_on 能保证"mysql 已经能连了"吗：
+
+
+
+# ============================================================
+# 题目2-4：把下面这条 docker run 改写成 compose 写法
+# ============================================================
+# 需求：
+#   1. 把下面这条命令改写成 compose 的写法
+#      （服务名叫 nginx-tlias；网络真实名字要叫 itheima）；
+#   2. 逐项说明"run 的参数"分别落到了 yml 的哪一行；
+#   3. 回答：为什么网络要在文件顶层再声明一次？不写 name: 会怎样？
+#   4. 反过来：如果 yml 里加一个环境变量、又多加一个目录映射，
+#      对应的 docker run 命令会变成什么样？（写在下面的"回答区"）
+# 素材：
+#
+# ---- 素材开始 ----
+# docker run -d \
+# --name nginx-tlias \
+# -v /usr/local/app/html:/usr/share/nginx/html \
+# -v /usr/local/app/conf/nginx.conf:/etc/nginx/nginx.conf \
+# --network itheima \
+# -p 80:80 \
+# nginx:1.20.2
+#
+# 参照物（本机实测时自动生成的网络名）：compose-demo_default
+# —— 项目名取自 compose 文件所在目录名。
+# ---- 素材结束 ----
+#
+# 检查点：① yml 的缩进与列表写法正确；
+#         ② 五样对应关系一个不漏（含 -d 由 up -d 承担）；
+#         ③ 能解释"服务里的网络 key"与"顶层真实网络名"；
+#         ④ 反写的那条命令里 -e、-v 的位置和写法正确。
+#
+# 在下面写你的配置：
+
+
+
+
+# ---- 回答区 ----
+# 逐项对应：
+
+
+# 为什么网络要在顶层再声明一次、不写 name: 会怎样：
+
+
+# 反过来的 docker run 命令：
+
+
+
+# ============================================================
+# 题目3-1（综合）：三个服务一份 yml 把 tlias 整套拉起来
+# ============================================================
+# 需求：
+# 写一份完整的 docker-compose.yml，一次拉起三个服务：
+#   · mysql：镜像 mysql:8，容器名 mysql，3307 映射 3306，
+#            环境变量 TZ=Asia/Shanghai、MYSQL_ROOT_PASSWORD=123，
+#            挂载 /usr/local/app/mysql/{data,init,conf} 到数据、初始化、配置目录；
+#   · tlias：现场构建（当前目录 + Dockerfile），容器名 tlias-server，
+#            8080 映射 8080，在 mysql 之后启动；
+#   · nginx：镜像 nginx:1.20.2，容器名 nginx-tlias，80 映射 80，
+#            挂载 /usr/local/app/nginx/conf/nginx.conf 到 /etc/nginx/nginx.conf，
+#            挂载 /usr/local/app/nginx/html 到 /usr/share/nginx/html，
+#            在 tlias 之后启动；
+#   · 三个服务放同一个自定义网络，真实网络名叫 itheima。
+# 另外在下面的"回答区"里写：
+#   · up -d 这一条命令一次性做了哪几件事；
+#   · 只想停不想删、和"停并删掉容器与网络"分别是哪条命令。
+# 素材：
+#
+# ---- 素材开始 ----
+# 容器里的目标路径：
+#   数据目录 /var/lib/mysql        初始化目录 /docker-entrypoint-initdb.d
+#   配置目录 /etc/mysql/conf.d     nginx 网页目录 /usr/share/nginx/html
+#   nginx 配置 /etc/nginx/nginx.conf
+# 启动顺序：mysql → tlias → nginx（用 depends_on 串起来）
+# ---- 素材结束 ----
+#
+# 检查点：① 三个服务字段齐全、缩进正确；
+#         ② 构建/镜像两种来源分别用 build 与 image；
+#         ③ depends_on 串起"mysql → tlias → nginx"；
+#         ④ 网络在服务里引用 + 顶层声明 name: itheima；
+#         ⑤ 两个小问答写对（up 做了哪几件事；stop 与 down 的区别）。
+#
+# 在下面写你的配置：
+
+
+
+
+# ---- 回答区 ----
+# up -d 一次性做了哪几件事：
+
+
+# 只想停不想删 / 停并删掉容器与网络：
+
+
+# （下面留白，不够就自己往下加行）
