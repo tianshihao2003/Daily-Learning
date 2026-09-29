@@ -1,0 +1,49 @@
+// ============================================
+// 综合题3-1：从零跑通第一个 SpringBoot Web 程序
+// ============================================
+// 目标：
+//     照课程的连贯实践，从"新建工程"一路做到"浏览器里看到 Hello Heima~"。
+//
+// 按步骤做，并把每一步的结果记在下面：
+// 1. 新建工程：New Module -> Spring Initializr
+//    记录你填的内容：Server URL / Name / Group / Artifact /
+//    Type / Language / JDK / Packaging
+// 2. 勾依赖：在 Dependencies 里勾上把 Web 开发支撑起来的那个依赖
+//    记录你勾的名字（右侧 Added dependencies 里显示的名称）
+// 3. 写请求处理类：类名 HelloController，包名 com.itheima
+//    访问 /hello?name=Heima 返回 Hello Heima~，并在控制台打印收到的名字
+//    代码写在下面的写作区里
+// 4. 运行启动类，等控制台出现服务器启动成功的日志
+//    把日志里提到端口的那一行、以及最后"启动成功"那一行抄下来
+// 5. 浏览器（或命令行 curl）访问 http://localhost:8080/hello?name=Heima
+//    把页面上看到的字符串抄下来
+// 6. 再访问一个不存在的地址，例如 http://localhost:8080/nope
+//    记下它返回的状态码，并写出为什么这一次访问不到
+// 7. 回答：这个跑起来的 Web 服务器（Tomcat）是你自己安装、自己启动的吗？
+//    它是从哪来的？
+// ============================================
+
+// 在下面写你的代码：
+
+package com.itheima;
+
+public class HelloController {
+
+}
+
+// 第 1 步：工程信息
+// Server URL：
+// Name：
+// Group：
+// Artifact：
+// Type / Language / JDK / Packaging：
+
+// 第 2 步：勾选的依赖
+
+// 第 4 步：启动日志（端口那行 + 启动成功那行）
+
+// 第 5 步：页面返回的字符串
+
+// 第 6 步：不存在的地址返回的状态码，以及原因
+
+// 第 7 步：回答

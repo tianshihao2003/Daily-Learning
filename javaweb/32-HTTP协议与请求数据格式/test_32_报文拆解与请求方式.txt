@@ -1,0 +1,38 @@
+// ============================================
+// 题目2-3：拆解一条报文，并判断该用哪种请求方式
+// ============================================
+// 下面是一条真实的请求报文（来自 PPT 第 24-26 页的截图）：
+//
+// POST /brand HTTP/1.1
+// Accept: application/json, text/plain, */*
+// Accept-Encoding: gzip, deflate, br
+// Accept-Language: zh-CN,zh;q=0.9
+// Content-Length: 161
+// Content-Type: application/json;charset=UTF-8
+// Cookie: Idea-8296eb32=841b16f0-0cfe-495a-9cc9-d5aaa71501a6; JSESSIONID=0FDE4E430876BD9C5C955F061207386F
+// Host: localhost:8080
+// User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/...
+//
+// {"status":1,"brandName":"黑马","companyName":"黑马程序员","id":"","description":"黑马程序员"}
+//
+// 要求：
+// 1. 指出请求行、请求头、请求体分别是"从哪一行到哪一行"
+// 2. 写出这条报文的请求方式、资源路径、协议版本
+// 3. 说出 Content-Type 和 Content-Length 这两个头在这里的作用
+// 4. 两个选型问题：
+//    ① "查询所有品牌"该用哪种请求方式？参数放在哪里？
+//    ② "新增一个品牌"为什么用 POST 更好？
+// ============================================
+
+// 下面写你的答案：
+
+// 1. 请求行：
+//    请求头：
+//    请求体：
+
+// 2. 请求方式 / 资源路径 / 协议版本：
+
+// 3. Content-Type 和 Content-Length 的作用：
+
+// 4. ①
+//    ②

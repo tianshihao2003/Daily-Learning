@@ -1,0 +1,26 @@
+// ============================================
+// 题目2-4：排错——创建工程时脚手架连不上
+// ============================================
+// 背景：
+//     你在 IDEA 里用 Spring Initializr 创建 SpringBoot 工程，
+//     Name、Group、Artifact 都填好了，刚点 Next 就弹窗报错：
+//
+//         Initialization failed for 'https://start.spring.io'
+//         Please check URL, network and proxy settings.
+//         Error message:
+//         Cannot download 'https://start.spring.io': Connect timed out
+//
+// 要求：
+// 1. 写出你的处理思路（至少三条，一步一步来）
+// 2. 写出处理完之后，New Module 页面上那个要改的地方叫什么、改成什么
+// 3. 回答：这次报错和"依赖下载不下来"（比如 Maven 报
+//    Could not find artifact / xxx.lastUpdated）是同一件事吗？为什么？
+// ============================================
+
+// 下面写你的答案：
+
+// 1. 处理思路：
+
+// 2. 要改的地方：
+
+// 3. 是不是同一件事：
