@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================ -->
+<!-- 题目2-1：配置本地仓库与阿里云私服 -->
+<!-- ============================================ -->
+<!-- 要求：在下面的 settings 文件里补两处配置 -->
+<!-- 1. 本地仓库：指到 D:\develop\apache-maven-3.9.4\mvn_repo -->
+<!-- 2. 阿里云私服（镜像中央仓库）： -->
+<!--    id 用 alimaven，显示名用 aliyun maven， -->
+<!--    地址用 http://maven.aliyun.com/nexus/content/groups/public/ -->
+<!-- 检查点：写完后这个文件仍然要能作为合法 XML 解析（浏览器打开无报错） -->
+<!-- ============================================ -->
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
+
+	<!-- 在下面写你的代码： -->
+
+</settings>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================ -->
+<!-- 综合题：给一个 Web 项目配全依赖范围，并亲手验证三种清单 -->
+<!-- ============================================ -->
+<!-- 场景：一个要打成 war 的 Web 项目，需要四类依赖。按步骤做： -->
+<!-- 1. 在下面的 pom.xml 里配好四个依赖，并给每个依赖写上正确的 <scope>， -->
+<!--    每个都用中文注释说明"主程序 / 测试程序 / 打包运行"三项分别是有效还是无效： -->
+<!--    junit-jupiter 5.9.1、jakarta.servlet-api 6.0.0、 -->
+<!--    mysql-connector-j 8.3.0、log4j 1.2.12 -->
+<!-- 2. 执行 mvn dependency:tree，把输出的四行（含每行末尾的 scope）抄到文件末尾的注释里 -->
+<!-- 3. 再执行 mvn dependency:build-classpath -DincludeScope=compile，记下哪一个依赖不见了； -->
+<!--    换成 -DincludeScope=runtime 再记一次；最后用 -DincludeScope=test 跑一次， -->
+<!--    说明为什么这一次"全都在" -->
+<!-- 4. 假设某天 mvn compile 一直报某个依赖找不到，而且每次报错都很快、看不出在联网下载。 -->
+<!--    写出你的排查步骤（至少三条），并写出批量删除"下载失败记录"的那条命令 -->
+<!-- 5. 依赖下载好了、IDEA 的 Maven 面板还是红波浪线，写出最后一招 -->
+<!-- ============================================ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.itheima</groupId>
+    <artifactId>web-demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 第 1 步：在下面写你的代码： -->
+
+
+</project>
+
+<!-- 第 2 步：mvn dependency:tree 的四行抄在这里 -->
+
+<!-- 第 3 步：三种 classpath 的记录写在这里 -->
+<!-- -DincludeScope=compile： -->
+<!-- -DincludeScope=runtime： -->
+<!-- -DincludeScope=test： -->
+
+<!-- 第 4 步：排查步骤（至少三条）+ 那条删除命令写在这里 -->
+
+<!-- 第 5 步：最后一招写在这里 -->

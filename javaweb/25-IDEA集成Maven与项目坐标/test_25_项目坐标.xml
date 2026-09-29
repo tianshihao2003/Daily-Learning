@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================ -->
+<!-- 题目2-1：写一个 Maven 项目的坐标 -->
+<!-- ============================================ -->
+<!-- 下面这个 pom.xml 里少了"这个项目自己的坐标"，把它补上： -->
+<!-- 1. 这个项目隶属的组织：com.itheima -->
+<!-- 2. 项目（模块）名：maven-project03 -->
+<!-- 3. 版本：1.0 的快照版 -->
+<!-- 4. 三行都写在 <modelVersion> 下面，和 <properties> 平级的位置 -->
+<!-- 5. 写完在文件末尾的注释里回答：这三部分各表示什么？（一句话一个） -->
+<!-- ============================================ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 在下面写你的代码： -->
+
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>
+
+<!-- 第 5 问的回答写在这里： -->

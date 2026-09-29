@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================ -->
+<!-- 题目2-2：判断四个依赖该配什么范围 -->
+<!-- ============================================ -->
+<!-- 一个 Java Web 项目要用到下面四样东西，请分别判断该写哪个 <scope>， -->
+<!-- 并把四个依赖都写进下面的 pom.xml 里（每个依赖后面用中文注释说明理由）： -->
+<!-- 1. log4j:log4j:1.2.12（日志，主程序要写日志、上线运行时也要） -->
+<!-- 2. org.junit.jupiter:junit-jupiter:5.9.1（单元测试框架） -->
+<!-- 3. jakarta.servlet:jakarta.servlet-api:6.0.0（Servlet 规范，Tomcat 服务器自己带了） -->
+<!-- 4. com.mysql:mysql-connector-j:8.3.0（MySQL 的 jdbc 驱动，代码里只用 JDBC 接口、 -->
+<!--    运行时才加载驱动） -->
+<!-- 判断办法：对每个依赖问三个问题——主程序写代码时要不要它？写测试时要不要它？ -->
+<!-- 打包上线后运行时要不要它？ -->
+<!-- ============================================ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.itheima</groupId>
+    <artifactId>maven-project01</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 在下面写你的代码： -->
+
+
+</project>

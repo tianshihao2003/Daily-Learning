@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================ -->
+<!-- 题目2-1：给项目加上两个依赖 -->
+<!-- ============================================ -->
+<!-- 项目 maven-project01 现在要用两个第三方库，把它们配到这个 pom.xml 里： -->
+<!-- 1. commons-io：组织 commons-io，版本 2.11.0 -->
+<!-- 2. hutool-all：组织 cn.hutool，版本 5.8.27 -->
+<!-- 两个依赖写在同一个"装依赖的容器"标签里；每个依赖按顺序写三行， -->
+<!-- 并用中文注释标出哪行是组织名、哪行是模块名、哪行是版本号。 -->
+<!-- 写完回答：改完 pom.xml 之后，要让依赖真正生效，下一步必须做什么？ -->
+<!-- ============================================ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.itheima</groupId>
+    <artifactId>maven-project01</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 在下面写你的代码： -->
+
+
+</project>
+
+<!-- 最后一个问题的回答写在这里： -->

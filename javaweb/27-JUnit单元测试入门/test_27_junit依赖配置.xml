@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================ -->
+<!-- 题目2-1：给项目加上 JUnit 依赖 -->
+<!-- ============================================ -->
+<!-- 项目要用 JUnit 写单元测试，先把依赖加到下面的 pom.xml 里： -->
+<!-- 1. 组织名用 org.junit.jupiter（JUnit 5 统一是这个） -->
+<!-- 2. 模块名用 junit-jupiter，版本 5.9.1 -->
+<!-- 3. 写在"装依赖的容器"标签里 -->
+<!-- 4. 用中文注释标出哪行是组织名、哪行是模块名、哪行是版本号 -->
+<!-- ============================================ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.itheima</groupId>
+    <artifactId>maven-project01</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 在下面写你的代码： -->
+
+
+</project>

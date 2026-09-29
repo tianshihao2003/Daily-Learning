@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================ -->
+<!-- 题目2-1：给 junit 依赖加上依赖范围 -->
+<!-- ============================================ -->
+<!-- 下面 pom.xml 里的 junit 依赖现在"哪儿都能用"，包括主程序里。 -->
+<!-- 要求： -->
+<!-- 1. 给它加上依赖范围，让这个 jar 只在"测试程序范围"有效（主程序和打包都不要它） -->
+<!-- 2. 写一行中文注释，说明你写的这个值是四种取值里的哪一个、代表什么 -->
+<!-- 3. 在文件末尾的注释里回答：加上它以后，src/main/java 里还能不能 import -->
+<!--    org.junit.jupiter.api.Test？为什么？ -->
+<!-- ============================================ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.itheima</groupId>
+    <artifactId>maven-project01</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!--junit依赖-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.9.1</version>
+            <!-- 在下面写你的代码： -->
+
+        </dependency>
+    </dependencies>
+
+</project>
+
+<!-- 第 3 步：回答写在这里 -->
