@@ -1,0 +1,107 @@
+<!-- ==========================================================================
+     素材（不用改，照着理解即可）
+     ==========================================================================
+     工程：tlias-web-management（SpringBoot 3.2.x + MyBatis + MySQL，Java 17）
+     XML 映射文件的位置：src/main/resources/com/itheima/mapper/EmpMapper.xml
+       （与接口 src/main/java/com/itheima/mapper/EmpMapper.java 同包同名）
+
+     接口方法签名（com.itheima.mapper.EmpMapper）：
+       List<Emp> list(EmpQueryParam empQueryParam);
+
+     请求参数对象 com.itheima.pojo.EmpQueryParam 的属性（#{} 里写的名字来自这里）：
+       page Integer（页码，默认 1）/ pageSize Integer（每页记录数，默认 10）
+       name String（姓名）/ gender Integer（性别, 1 男 2 女）
+       begin LocalDate（入职日期-开始）/ end LocalDate（入职日期-结束）
+
+     实体类 com.itheima.pojo.Emp 的属性：
+       id Integer / username String / password String / name String / gender Integer
+       phone String / job Integer / salary Integer / image String
+       entryDate LocalDate / deptId Integer / createTime LocalDateTime / updateTime LocalDateTime
+       deptName String      ← 表里没有这个字段，用来装"部门名称"（取自 dept.name）
+
+     两张表（本机数据量：emp 30 条、dept 6 条）：
+       emp：id, username, password, name, gender, phone, job, salary, image,
+            entry_date, dept_id, create_time, update_time
+       dept：id, name, create_time, update_time
+
+     接口文档《2.1 员工列表查询》的查询条件：
+       name      否   姓名（模糊匹配）
+       gender    否   性别, 1 男, 2 女
+       begin     否   范围匹配的开始时间(入职日期)，示例 2010-01-01
+       end       否   范围匹配的结束时间(入职日期)，示例 2020-01-01
+     列表按"最后操作时间"（update_time）倒序排列。
+     ========================================================================== -->
+
+
+<!-- ==========================================================================
+     题目2-3：在 XML 里写一条"条件写死"的多表条件查询 SQL
+     ==========================================================================
+     需求：
+       员工列表要按姓名（模糊匹配）、性别（精确匹配）、入职日期范围（含头含尾）
+       查询，同时带出部门名称，结果按最后修改时间倒序。请把这条 SQL 写进 XML
+       映射文件里。
+
+     完成以下操作：
+     1. 在下面把 XML 文件补完整（声明、DOCTYPE、mapper 标签、查询语句都自己写；
+        查询语句的三个条件全部写死，都要有）
+     2. 写完后回答：这个 XML 文件应该放在哪个目录？namespace 和语句 id 分别写什么？
+
+     写作区说明：下面的写作区里已经把"语句 id 与返回类型"这行摆好了，照着往里写。
+     ========================================================================== -->
+
+<!-- 在下面写你的代码：
+
+     <?xml version="1.0" encoding="UTF-8" ?>
+     <!DOCTYPE mapper
+             PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+             "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+     <mapper namespace="____">
+
+         <select id="____" resultType="____">
+             select e.*, d.name deptName from emp e left join dept d on e.dept_id = d.id
+             where
+             order by e.update_time desc
+         </select>
+
+     </mapper>
+
+-->
+
+<!-- 第 2 步的回答：
+     文件位置：
+     namespace：
+     语句 id 与 resultType：
+-->
+
+
+<!-- ==========================================================================
+     题目2-4：把上面那条 SQL 改成动态 SQL
+     ==========================================================================
+     需求：
+       上面那条 SQL 的条件是写死的——用户只填姓名、不填性别和日期时，一行数据
+       都查不出来。请把它改成"用户填了哪个条件就按哪个条件查，一个条件都不填
+       就查全部"，并说明用到的两个标签各自解决了什么问题。
+
+     完成以下操作：
+     1. 在下面写出改造后的查询语句（条件全部改成按需拼接，排序语句保留）
+     2. 写完后回答：
+        (1) 两个标签分别解决了什么问题？
+        (2) 一个条件都没填时，生成的 SQL 里还有 where 关键字吗？为什么？
+     ========================================================================== -->
+
+<!-- 在下面写你的代码：
+
+     <select id="list" resultType="com.itheima.pojo.Emp">
+         select e.*, d.name deptName from emp e left join dept d on e.dept_id = d.id
+         ____
+
+         order by e.update_time desc
+     </select>
+
+-->
+
+<!-- 第 2 步的回答：
+     (1)
+     
+     (2)
+-->
