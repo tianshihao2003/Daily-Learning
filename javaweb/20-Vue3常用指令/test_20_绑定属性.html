@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>绑定属性</title>
+		<style>
+			.card {
+				width: 320px;
+				margin: 30px auto;
+				padding: 16px;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+			}
+			.vip {
+				color: #d4380d;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ============================================ -->
+		<!-- 题目2-2：把头像和链接"绑"上数据 -->
+		<!-- ============================================ -->
+		<!-- 要求： -->
+		<!-- 1. 头像的图片地址、替代文字都要来自数据（不能写在标签里写死） -->
+		<!-- 2. 姓名的链接地址（href）也要来自数据 -->
+		<!-- 3. 说明文字前面加一个小标签，标签文字来自数据判断：等级是 vip 时显示"VIP 用户"，否则显示"普通用户" -->
+		<!-- 4. 其中一处用完整写法、一处用简写，体会两种写法效果一样 -->
+		<!-- 检查点：头像是图片（不是破图、也不是一串花括号）；鼠标移到姓名上是链接； -->
+		<!--         把数据里的等级改成别的值刷新，标签文字跟着变 -->
+		<!-- ============================================ -->
+
+		<div id="app">
+			<div class="card">
+				<p><img id="avatar" width="60"></p>
+				<p><a id="home"></a></p>
+				<p>
+					<span class="vip"></span>
+					<span></span>
+					—— 华山派大弟子
+				</p>
+			</div>
+		</div>
+
+		<!-- 在下面写你的代码： -->
+		<script type="module">
+			import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
+
+		</script>
+	</body>
+</html>

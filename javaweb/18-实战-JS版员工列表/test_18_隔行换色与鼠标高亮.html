@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>隔行换色与鼠标高亮</title>
+		<style>
+			table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+			th, td {
+				border: 1px solid #ddd;
+				padding: 8px;
+				text-align: center;
+			}
+			th {
+				background-color: #f2f2f2;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ============================================ -->
+		<!-- 题目2-3：隔行换色 + 鼠标移入高亮（两者共存） -->
+		<!-- ============================================ -->
+		<!-- 要求： -->
+		<!-- 1. 表格数据行共 5 行，隔行换色：奇数行 #f2e2e2、偶数行 #e6f7ff -->
+		<!-- 2. 鼠标移入某一行时，这一行变成 #d0e8ff 高亮 -->
+		<!-- 3. 鼠标移出时，这一行要还原成它本来的隔行色（不能变成一片白） -->
+		<!-- 检查点：页面是“粉、蓝、粉、蓝…”；鼠标压住某行变浅蓝，移开后这一行回到它原来的颜色 -->
+		<!-- ============================================ -->
+
+		<table>
+			<thead>
+				<tr>
+					<th>学号</th>
+					<th>姓名</th>
+					<th>分数</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>001</td>
+					<td>张三</td>
+					<td>90</td>
+				</tr>
+				<tr>
+					<td>002</td>
+					<td>李四</td>
+					<td>92</td>
+				</tr>
+				<tr>
+					<td>003</td>
+					<td>王五</td>
+					<td>85</td>
+				</tr>
+				<tr>
+					<td>004</td>
+					<td>赵六</td>
+					<td>78</td>
+				</tr>
+				<tr>
+					<td>005</td>
+					<td>孙七</td>
+					<td>96</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- 在下面写你的代码： -->
+		<script>
+
+		</script>
+	</body>
+</html>

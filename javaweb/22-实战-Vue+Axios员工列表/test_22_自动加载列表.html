@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>自动加载列表</title>
+		<style>
+			table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+			th, td {
+				border: 1px solid #ddd;
+				padding: 8px;
+				text-align: center;
+			}
+			th {
+				background-color: #f2f2f2;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ============================================ -->
+		<!-- 题目2-1：页面一打开就自动把数据查回来 -->
+		<!-- ============================================ -->
+		<!-- 说明：接口就用 https://web-server.itheima.net/emps/list（返回结构是 {code, msg, data:[...]}， -->
+		<!--       每条数据有 name 字段），这里只当它是"图书接口"用。 -->
+		<!-- 要求： -->
+		<!-- 1. 数据里准备一个空数组 books，表格的数据行用循环按它渲染 -->
+		<!-- 2. 写一个方法请求接口，把返回的数组赋给 books（用 async / await 写） -->
+		<!-- 3. 打开页面时不用点任何按钮，表格里就该有数据（方法名自己定，推荐 load） -->
+		<!-- 检查点：打开页面表格里就有数据；把"自动加载"那段代码删掉刷新，表格就变空了 -->
+		<!-- ============================================ -->
+
+		<div id="app">
+			<table>
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>书名</th>
+						<th>作者</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- 数据行写在这里 -->
+
+				</tbody>
+			</table>
+		</div>
+
+		<!-- 在下面写你的代码： -->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script type="module">
+			import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>综合题：JS版员工列表</title>
+		<style>
+			table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+			th, td {
+				border: 1px solid #ddd;
+				padding: 8px;
+				text-align: center;
+			}
+			th {
+				background-color: #f2f2f2;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ============================================ -->
+		<!-- 综合题3-1：做一个“JS 版员工列表”（渲染 + 高亮 + 删除） -->
+		<!-- ============================================ -->
+		<!-- 要求： -->
+		<!-- 步骤： -->
+		<!-- 1. 定义员工数组 emps，放 4 个员工对象（字段：姓名、性别、职位、入职日期，数据自己编） -->
+		<!-- 2. 写 render()：按数组把每一条数据渲染成一行，整体放进 tbody， -->
+		<!--    每行最后一列放一个“删除”按钮（class 为 del） -->
+		<!-- 3. 写 stripe()：给数据行做隔行换色（奇数行 #f2e2e2、偶数行 #e6f7ff），渲染后调用 -->
+		<!-- 4. 写 bindDelete()：给每个删除按钮绑点击事件——先从 emps 里删掉这条数据， -->
+		<!--    再重新渲染、重新上色、重新绑事件 -->
+		<!-- 5. 写 updateCount()：把 #count 更新成“共 N 人”（N 是当前数组长度），每次渲染后调用 -->
+		<!-- 6. 页面加载时依次调用 render() → stripe() → bindDelete() → updateCount() -->
+		<!-- 7. 鼠标移入某一行高亮 #d0e8ff，移出还原成该行本来的隔行色 -->
+		<!-- 检查点：① 一开始 4 行、显示“共 4 人” ② 行颜色交替 ③ 鼠标压住变浅蓝、移开还原 -->
+		<!--         ④ 点删除后这一行消失、剩下的行重新交替、人数减一，连续删几行都不错位 -->
+		<!-- ============================================ -->
+
+		<table>
+			<thead>
+				<tr>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>职位</th>
+					<th>入职日期</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+
+		<div id="count">共 0 人</div>
+
+		<!-- 在下面写你的代码： -->
+		<script>
+
+		</script>
+	</body>
+</html>

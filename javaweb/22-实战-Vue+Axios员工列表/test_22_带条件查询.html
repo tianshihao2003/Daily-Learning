@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>带条件的查询</title>
+		<style>
+			body {
+				font-family: "微软雅黑";
+				margin: 30px;
+			}
+			input {
+				padding: 5px;
+				width: 200px;
+			}
+			button {
+				padding: 5px 15px;
+			}
+			#tip {
+				margin: 20px 0;
+				color: #d4380d;
+			}
+			table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+			th, td {
+				border: 1px solid #ddd;
+				padding: 8px;
+				text-align: center;
+			}
+			th {
+				background-color: #f2f2f2;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ============================================ -->
+		<!-- 题目2-2：带条件的查询 + 清空后重新查 -->
+		<!-- ============================================ -->
+		<!-- 要求： -->
+		<!-- 1. 输入框里的内容和数据双向同步（不用手写取值代码） -->
+		<!-- 2. 点"查询"：把输入框里的内容作为查询条件（参数名 name）拼到地址后面， -->
+		<!--    请求 https://web-server.itheima.net/emps/list，用返回结果渲染表格 -->
+		<!-- 3. 没查到数据时提示区显示"没有匹配的员工"；查到了显示"共 N 人" -->
+		<!-- 4. 点"清空"：输入框清空，并自动再查一次（把全部数据取回来） -->
+		<!-- 5. 请求过程中提示区显示"加载中…"；失败时显示"加载失败" -->
+		<!-- 检查点：打开页面自动加载；输入一个存在的字查询，只剩匹配的数据； -->
+		<!--         输入乱码查询显示"没有匹配的员工"；点清空后表格恢复全部数据 -->
+		<!-- ============================================ -->
+
+		<div id="app">
+			<div>
+				<input type="text" placeholder="请输入姓名">
+				<button type="button">查询</button>
+				<button type="button">清空</button>
+			</div>
+
+			<p id="tip"></p>
+
+			<table>
+				<thead>
+					<tr>
+						<th>姓名</th>
+						<th>职位</th>
+						<th>入职日期</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- 数据行写在这里 -->
+
+				</tbody>
+			</table>
+		</div>
+
+		<!-- 在下面写你的代码： -->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script type="module">
+			import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
+
+		</script>
+	</body>
+</html>

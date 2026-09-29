@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>综合题：员工列表（指令版）</title>
+		<style>
+			/* 导航栏样式 */
+			.navbar {
+				background-color: #b5b3b3;
+				display: flex;
+				justify-content: space-between;
+				padding: 10px;
+				align-items: center;
+			}
+			.navbar h1 {
+				margin: 0;
+				font-weight: bold;
+				color: white;
+				font-family: "楷体";
+			}
+			.navbar a {
+				color: white;
+				text-decoration: none;
+			}
+
+			/* 搜索表单样式 */
+			.search-form {
+				display: flex;
+				flex-wrap: nowrap;
+				align-items: center;
+				gap: 10px;
+				margin: 20px 0;
+			}
+			.search-form input[type="text"], .search-form select {
+				padding: 5px;
+				width: 260px;
+			}
+			.search-form button {
+				padding: 5px 15px;
+			}
+
+			/* 表格样式 */
+			table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+			th, td {
+				border: 1px solid #ddd;
+				padding: 8px;
+				text-align: center;
+			}
+			th {
+				background-color: #f2f2f2;
+				font-weight: bold;
+			}
+			.avatar {
+				width: 30px;
+				height: 30px;
+			}
+
+			/* 页脚样式 */
+			.footer {
+				background-color: #b5b3b3;
+				color: white;
+				text-align: center;
+				padding: 10px 0;
+				margin-top: 30px;
+			}
+
+			#container {
+				width: 80%;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ============================================ -->
+		<!-- 综合题3-1：用指令重写"员工列表"页面（课程案例） -->
+		<!-- ============================================ -->
+		<!-- 步骤： -->
+		<!-- 1. 准备数据：searchForm（name / gender / job 三个空串）+ empList（3 条员工数据， -->
+		<!--    字段：id、name、image、gender(1 男 2 女)、job("1"~"5")、entrydate、updatetime） -->
+		<!-- 2. 渲染表格：数据行用循环渲染，每行加唯一标识（用 id）；序号列从 1 开始； -->
+		<!--    性别列把 1/2 显示成"男/女" -->
+		<!-- 3. 头像列：图片地址和替代文字用属性绑定 -->
+		<!-- 4. 职位列：用条件渲染把数字翻译成中文（1 班主任、2 讲师、3 学工主管、4 教研主管、 -->
+		<!--    5 咨询师、其它显示"其他"） -->
+		<!-- 5. 搜索表单：三个控件和 searchForm 双向绑定；"查询"按钮点一下把 this.searchForm 打印到控制台； -->
+		<!--    "清空"按钮把 searchForm 还原成三个空串 -->
+		<!-- 6. 把整个 #container 交给 Vue 控制 -->
+		<!-- 检查点：① 表格 3 行、序号 1~3、性别"男/男/女"、职位"班主任/班主任/讲师"、头像正常显示 -->
+		<!--         ② 在姓名框打字后点"查询"，控制台打印的对象里能看到刚输入的内容 -->
+		<!--         ③ 点"清空"，三个控件一起变空 ④ 页面上看不到任何花括号 -->
+		<!-- ============================================ -->
+
+		<div id="container">
+			<!-- 顶部导航栏 -->
+			<div class="navbar">
+				<h1>Tlias智能学习辅助系统</h1>
+				<a href="#">退出登录</a>
+			</div>
+
+			<!-- 搜索表单区域 -->
+			<form class="search-form">
+				<label for="name">姓名：</label>
+				<input type="text" id="name" name="name" placeholder="请输入姓名">
+
+				<label for="gender">性别：</label>
+				<select id="gender" name="gender">
+					<option value=""></option>
+					<option value="1">男</option>
+					<option value="2">女</option>
+				</select>
+
+				<label for="position">职位：</label>
+				<select id="position" name="position">
+					<option value=""></option>
+					<option value="1">班主任</option>
+					<option value="2">讲师</option>
+					<option value="3">学工主管</option>
+					<option value="4">教研主管</option>
+					<option value="5">咨询师</option>
+				</select>
+
+				<button type="button">查询</button>
+				<button type="button">清空</button>
+			</form>
+
+			<!-- 表格展示区 -->
+			<table>
+				<!-- 表头 -->
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>姓名</th>
+						<th>性别</th>
+						<th>头像</th>
+						<th>职位</th>
+						<th>入职日期</th>
+						<th>最后操作时间</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+
+				<!-- 表格主体内容：数据行写在这里 -->
+
+				<tbody>
+
+				</tbody>
+			</table>
+
+			<!-- 页脚版权区域 -->
+			<footer class="footer">
+				<p>江苏传智播客教育科技股份有限公司</p>
+				<p>版权所有 Copyright 2006-2024 All Rights Reserved</p>
+			</footer>
+		</div>
+
+		<!-- 在下面写你的代码： -->
+		<script type="module">
+			import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
+
+		</script>
+	</body>
+</html>

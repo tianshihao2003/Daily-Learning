@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>生命周期钩子</title>
+		<style>
+			body {
+				font-family: "微软雅黑";
+				margin: 30px;
+			}
+			p {
+				line-height: 1.8;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ============================================ -->
+		<!-- 题目2-3：用钩子做一次"页面打开就显示"的信息 -->
+		<!-- ============================================ -->
+		<!-- 要求： -->
+		<!-- 1. 用两个钩子分别做事：一个在"创建后"把时间算好，一个在"挂载完成"时去请求接口 -->
+		<!-- 2. 时间用 new Date().toLocaleString() 取，存到数据里的变量上 -->
+		<!-- 3. 请求 https://web-server.itheima.net/emps/list，把返回数据的条数显示出来 -->
+		<!--    （形如：接口返回 4 条数据，数字以接口实际返回为准） -->
+		<!-- 4. 两个钩子里各打印一行日志到控制台，观察谁先谁后 -->
+		<!-- 检查点：页面显示当前时间和接口返回的条数；控制台里"创建后"的日志在前、"挂载完成"的在后 -->
+		<!-- ============================================ -->
+
+		<div id="app">
+			<!-- 把时间和条数显示到下面两行里 -->
+			<p>系统时间：</p>
+			<p>接口返回 条数据</p>
+		</div>
+
+		<!-- 在下面写你的代码： -->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script type="module">
+			import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
+
+		</script>
+	</body>
+</html>

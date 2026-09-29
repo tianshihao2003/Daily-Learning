@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>综合题：个人名片小交互页</title>
+		<style>
+			#card {
+				width: 320px;
+				padding: 16px;
+				border: 1px solid #ddd;
+				background-color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ============================================ -->
+		<!-- 综合题3-1：做一个“个人名片”小交互页 -->
+		<!-- ============================================ -->
+		<!-- 要求： -->
+		<!-- 步骤： -->
+		<!-- 1. 点击“换个问候语”按钮（#greetBtn）：把问候语（#greeting）改成：你好，欢迎来看我的主页 -->
+		<!-- 2. 鼠标移入名片（#card）时名片背景变 #e6f7ff，移出恢复白色 -->
+		<!-- 3. 在昵称输入框（#nickname）里输入时，把“当前昵称：”加输入内容实时显示到 #status； -->
+		<!--    失去焦点时把 #status 改成：昵称已确定 -->
+		<!-- 4. 代码优化：把“改 #status 文字”这段重复逻辑抽成一个函数（如 setStatus(text)），第 3 步里都调用它 -->
+		<!-- 检查点：① 点按钮后问候语变了 ② 鼠标划进名片变浅蓝、划出变白 -->
+		<!--         ③ 敲字时状态行跟着变，失焦后显示“昵称已确定” ④ 三处提示都走同一个函数 -->
+		<!-- ============================================ -->
+
+		<div id="card">
+			<h2 id="greeting">你好，我是团子</h2>
+			<button type="button" id="greetBtn">换个问候语</button>
+			<p>
+				<label for="nickname">昵称：</label>
+				<input type="text" id="nickname" placeholder="请输入昵称">
+			</p>
+			<div id="status">（这里显示状态）</div>
+		</div>
+
+		<!-- 在下面写你的代码： -->
+		<script>
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>排查错误</title>
+	</head>
+	<body>
+		<!-- ============================================ -->
+		<!-- 题目2-3：诊断——为什么页面原样显示了花括号？ -->
+		<!-- ============================================ -->
+		<!-- 下面这个页面打开后有"两处"原样显示着 {{title}}，数据没有渲染出来。 -->
+		<!-- 要求：找出全部 3 处问题并改好，改完页面上只剩一个标题、内容是"传智教育"。 -->
+		<!-- 检查点：页面上看不到任何花括号；F12 控制台里没有报错 -->
+		<!-- ============================================ -->
+
+		<div id="app">
+			<h1>{{title}}</h1>
+		</div>
+		<h1>{{title}}</h1>
+
+		<!-- 在下面写你的代码： -->
+		<script type="module">
+			import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
+			createApp({
+				data: {
+					title: '传智教育'
+				}
+			}).mount('#container');
+		</script>
+	</body>
+</html>

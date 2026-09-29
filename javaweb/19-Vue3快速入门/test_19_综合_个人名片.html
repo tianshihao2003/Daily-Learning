@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>综合题：个人名片</title>
+		<style>
+			/* 页面基础样式已经给好，需要的话可以自己再调 */
+			body {
+				font-family: "微软雅黑";
+				background-color: #f6f7f9;
+			}
+			.card {
+				width: 360px;
+				margin: 40px auto;
+				padding: 20px;
+				background-color: #fff;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+			}
+			.card h1 {
+				margin: 0;
+			}
+			.sub {
+				color: #888;
+				margin: 6px 0 16px;
+			}
+			.tag {
+				display: inline-block;
+				padding: 2px 8px;
+				margin-right: 6px;
+				background-color: #eef6ff;
+				border-radius: 4px;
+			}
+			.visits {
+				color: #888;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ============================================ -->
+		<!-- 综合题3-1：做一个"个人名片"页面（数据全部来自 data） -->
+		<!-- ============================================ -->
+		<!-- 要求： -->
+		<!-- 1. 姓名、职位、城市、简介、三个技能、访问次数等所有文字内容都放在 data() 里， -->
+		<!--    页面上只写"取值的位置"，不许把文字写死在标签里 -->
+		<!-- 2. 姓名下面那行"职位 · 城市"用两个变量拼出来（中间的点号可以写在 HTML 里） -->
+		<!-- 3. 三个技能标签用三段独立的 span 显示（还没学循环，写三遍就行） -->
+		<!-- 4. 访问次数显示为数据里的数字变量加上 1 -->
+		<!-- 5. 页面用已经给的样式类（card / sub / tag / visits）套好，看着像一张名片 -->
+		<!-- 检查点：① 页面上看不到任何花括号 ② 改数据里的姓名、刷新页面，名片上的姓名跟着变 -->
+		<!--         ③ 访问次数显示的是"数据里的值 + 1" ④ 三个技能标签有浅蓝底色 -->
+		<!-- ============================================ -->
+
+		<div id="app">
+			<div class="card">
+				<h1></h1>
+				<p class="sub"></p>
+				<p></p>
+				<p>
+					<span class="tag"></span>
+					<span class="tag"></span>
+					<span class="tag"></span>
+				</p>
+				<p class="visits">访问次数：</p>
+			</div>
+		</div>
+
+		<!-- 在下面写你的代码： -->
+		<script type="module">
+			import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
+
+		</script>
+	</body>
+</html>

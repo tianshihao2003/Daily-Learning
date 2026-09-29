@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>条件渲染</title>
+		<style>
+			span {
+				display: inline-block;
+				padding: 2px 10px;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ============================================ -->
+		<!-- 题目2-3：做一排"条件显示"的状态标记 -->
+		<!-- ============================================ -->
+		<!-- 要求： -->
+		<!-- 1. 数据里有一个状态变量 status，值自己设一个（0 / 1 / 2 / 其它） -->
+		<!-- 2. status 为 0 显示"未开始"、为 1 显示"进行中"、为 2 显示"已完成"、其它情况显示"状态未知" -->
+		<!--    （同时只能看到一个标记） -->
+		<!-- 3. 数据里再放一个开关变量（true / false）：为 true 时显示一行"详细说明"， -->
+		<!--    为 false 时这行说明要从页面上彻底消失（F12 的元素面板里也找不到） -->
+		<!-- 4. 把要求 3 再做一遍，但这次要求"不显示时元素还在页面上，只是被样式藏起来了" -->
+		<!--    （F12 元素面板里能找到它，并且带着 display: none） -->
+		<!-- 检查点：改 status 刷新，依次看到四种文字；改开关刷新，两个段落的"消失方式"不一样 -->
+		<!-- ============================================ -->
+
+		<div id="app">
+			<p>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</p>
+
+			<p>详细说明：这个任务由前端小组负责。</p>
+
+			<p>详细说明：这段文字用另一种方式控制显示。</p>
+		</div>
+
+		<!-- 在下面写你的代码： -->
+		<script type="module">
+			import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
+
+		</script>
+	</body>
+</html>

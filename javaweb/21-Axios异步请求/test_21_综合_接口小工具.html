@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>综合题：接口小工具</title>
+		<style>
+			body {
+				font-family: "微软雅黑";
+				margin: 30px;
+			}
+			input {
+				padding: 5px;
+				width: 200px;
+			}
+			button {
+				padding: 5px 15px;
+			}
+			#status {
+				margin: 20px 0;
+				color: #d4380d;
+			}
+			#list li {
+				line-height: 1.8;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ============================================ -->
+		<!-- 综合题3-1：做一个"接口小工具"页面（GET 查询 + POST 提交 + 状态提示） -->
+		<!-- ============================================ -->
+		<!-- 步骤： -->
+		<!-- 1. 查询：用 async / await 向 https://web-server.itheima.net/emps/list 发请求， -->
+		<!--    把姓名输入框里的内容作为 name 参数拼到地址后面（?name=xxx） -->
+		<!-- 2. 渲染：把返回的员工数组渲染成一段列表（每行一条，显示"姓名 - 入职日期"）； -->
+		<!--    没有数据时显示"没有匹配的员工" -->
+		<!-- 3. 状态提示：请求开始前显示"加载中…"；查到数据时显示"共 N 人"； -->
+		<!--    失败时显示"加载失败："+ 错误信息 -->
+		<!-- 4. 清空：点清空把输入框内容擦掉，结果区恢复成初始提示"请输入姓名后点击查询" -->
+		<!-- 5. 提交：点"提交一条数据"，用 POST 向 https://web-server.itheima.net/emps/update -->
+		<!--    提交 id=1，把返回的 msg 显示在状态区 -->
+		<!-- 6. 全程用 try / catch 处理错误，并在控制台打印每次请求的完整响应 -->
+		<!-- 检查点：① 打开页面提示"请输入姓名后点击查询" ② 姓名填"谢"再查询，列表只出现匹配的人 -->
+		<!--         ③ 姓名填 zzz 查询，提示"没有匹配的员工" ④ 点提交，状态区显示 success -->
+		<!--         ⑤ 地址改错再查询，显示"加载失败：..."而不是白屏 -->
+		<!-- ============================================ -->
+
+		<div>
+			<input type="text" id="name" placeholder="请输入姓名">
+			<button type="button" id="btnSearch">查询</button>
+			<button type="button" id="btnClear">清空</button>
+			<button type="button" id="btnUpdate">提交一条数据</button>
+		</div>
+
+		<div id="status"></div>
+		<ul id="list"></ul>
+
+		<!-- 在下面写你的代码： -->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script>
+
+		</script>
+	</body>
+</html>

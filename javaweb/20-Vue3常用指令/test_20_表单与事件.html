@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>表单与事件</title>
+		<style>
+			.form-row {
+				margin: 20px;
+			}
+			input, select {
+				padding: 5px;
+				width: 200px;
+			}
+			button {
+				padding: 5px 15px;
+			}
+			#out {
+				margin: 20px;
+				color: #d4380d;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ============================================ -->
+		<!-- 题目2-4：搜索表单——采集输入 + 两个按钮 -->
+		<!-- ============================================ -->
+		<!-- 要求： -->
+		<!-- 1. 输入框和下拉框里的值都要能自动进到数据里（不许写"取值"的代码，也不用给控件加事件） -->
+		<!-- 2. 点"查询"时：把当前表单数据打印到控制台，并把内容拼成一句话显示在输出区 -->
+		<!--    （形如：姓名: 张三, 类型: 2） -->
+		<!-- 3. 点"清空"时：输入框、下拉框里的内容全部清空，输出区也清空 -->
+		<!-- 检查点：在输入框打字 → 点查询 → 控制台里能看到刚输入的内容；点清空 → 三处一起变空 -->
+		<!-- ============================================ -->
+
+		<div id="app">
+			<div class="form-row">
+				<input type="text" placeholder="请输入姓名">
+				<select>
+					<option value=""></option>
+					<option value="1">前端</option>
+					<option value="2">后端</option>
+				</select>
+				<button type="button">查询</button>
+				<button type="button">清空</button>
+			</div>
+
+			<p id="out"></p>
+		</div>
+
+		<!-- 在下面写你的代码： -->
+		<script type="module">
+			import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
+
+		</script>
+	</body>
+</html>

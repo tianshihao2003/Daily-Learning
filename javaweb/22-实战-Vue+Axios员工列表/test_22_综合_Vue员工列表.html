@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>综合题：员工列表（异步交互版）</title>
+		<style>
+			/* 导航栏样式 */
+			.navbar {
+				background-color: #b5b3b3;
+				display: flex;
+				justify-content: space-between;
+				padding: 10px;
+				align-items: center;
+			}
+			.navbar h1 {
+				margin: 0;
+				font-weight: bold;
+				color: white;
+				font-family: "楷体";
+			}
+			.navbar a {
+				color: white;
+				text-decoration: none;
+			}
+
+			/* 搜索表单样式 */
+			.search-form {
+				display: flex;
+				flex-wrap: nowrap;
+				align-items: center;
+				gap: 10px;
+				margin: 20px 0;
+			}
+			.search-form input[type="text"], .search-form select {
+				padding: 5px;
+				width: 260px;
+			}
+			.search-form button {
+				padding: 5px 15px;
+			}
+
+			/* 表格样式 */
+			table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+			th, td {
+				border: 1px solid #ddd;
+				padding: 8px;
+				text-align: center;
+			}
+			th {
+				background-color: #f2f2f2;
+				font-weight: bold;
+			}
+			.avatar {
+				width: 30px;
+				height: 30px;
+			}
+
+			/* 页脚样式 */
+			.footer {
+				background-color: #b5b3b3;
+				color: white;
+				text-align: center;
+				padding: 10px 0;
+				margin-top: 30px;
+			}
+
+			#container {
+				width: 80%;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ============================================ -->
+		<!-- 综合题3-1：做一个"员工列表（异步交互版）"（课程案例） -->
+		<!-- ============================================ -->
+		<!-- 接口地址：https://web-server.itheima.net/emps/list?name=xxx&gender=xxx&job=xxx -->
+		<!-- 步骤： -->
+		<!-- 1. 数据准备：searchForm（name / gender / job 三个空串）+ empList（空数组） -->
+		<!-- 2. 发请求：写一个"查询"方法（用 async / await）——把 searchForm 的三个条件拼到地址后面， -->
+		<!--    请求接口，把返回的员工数组赋值给 empList -->
+		<!-- 3. 渲染：数据行用循环渲染（每行加唯一标识，用 id）；序号从 1 开始； -->
+		<!--    性别 1/2 显示"男/女"；头像用属性绑定；职位用条件渲染翻译成中文 -->
+		<!--    （1 班主任、2 讲师、3 学工主管、4 教研主管、5 咨询师、其它"其他"） -->
+		<!-- 4. 交互："查询"按钮调用查询方法；"清空"按钮把 searchForm 还原成三个空串并重新查一次； -->
+		<!--    三个控件和 searchForm 双向绑定 -->
+		<!-- 5. 自动加载：用生命周期钩子让页面加载完自动查一次（打开页面就能看到数据） -->
+		<!-- 6. 加分：给查询方法套 try / catch，失败时用 alert 或页面提示告诉用户"数据加载失败" -->
+		<!-- 7. 验证：姓名填一个存在的字查询，看数据是否真的跟着条件变了 -->
+		<!-- 检查点：① 打开页面不用点按钮就有数据 ② 序号 1~N、性别"男/女"、职位中文、头像正常 -->
+		<!--         ③ 带条件查询能筛出对应数据 ④ 点清空恢复全部数据 ⑤ 地址改错时页面有失败提示 -->
+		<!-- ============================================ -->
+
+		<div id="container">
+			<!-- 顶部导航栏 -->
+			<div class="navbar">
+				<h1>Tlias智能学习辅助系统</h1>
+				<a href="#">退出登录</a>
+			</div>
+
+			<!-- 搜索表单区域 -->
+			<form class="search-form">
+				<label for="name">姓名：</label>
+				<input type="text" id="name" name="name" placeholder="请输入姓名">
+
+				<label for="gender">性别：</label>
+				<select id="gender" name="gender">
+					<option value=""></option>
+					<option value="1">男</option>
+					<option value="2">女</option>
+				</select>
+
+				<label for="position">职位：</label>
+				<select id="position" name="position">
+					<option value=""></option>
+					<option value="1">班主任</option>
+					<option value="2">讲师</option>
+					<option value="3">学工主管</option>
+					<option value="4">教研主管</option>
+					<option value="5">咨询师</option>
+				</select>
+
+				<button type="button">查询</button>
+				<button type="button">清空</button>
+			</form>
+
+			<!-- 表格展示区 -->
+			<table>
+				<!-- 表头 -->
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>姓名</th>
+						<th>性别</th>
+						<th>头像</th>
+						<th>职位</th>
+						<th>入职日期</th>
+						<th>最后操作时间</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+
+				<!-- 表格主体内容：数据行写在这里 -->
+
+				<tbody>
+
+				</tbody>
+			</table>
+
+			<!-- 页脚版权区域 -->
+			<footer class="footer">
+				<p>江苏传智播客教育科技股份有限公司</p>
+				<p>版权所有 Copyright 2006-2024 All Rights Reserved</p>
+			</footer>
+		</div>
+
+		<!-- 在下面写你的代码： -->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script type="module">
+			import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
+
+		</script>
+	</body>
+</html>

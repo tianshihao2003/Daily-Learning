@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>列表渲染</title>
+		<style>
+			table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+			th, td {
+				border: 1px solid #ddd;
+				padding: 8px;
+				text-align: center;
+			}
+			th {
+				background-color: #f2f2f2;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ============================================ -->
+		<!-- 题目2-1：用循环渲染一个商品列表 -->
+		<!-- ============================================ -->
+		<!-- 要求： -->
+		<!-- 1. 在数据里准备一个数组，放 4 个商品对象（字段：名称、价格，再加上一个唯一标识字段，数据自己编） -->
+		<!-- 2. 表格的数据行一行都不要手写，让它按数组渲染出来——数据有几条就渲染几行 -->
+		<!-- 3. 序号列显示 1、2、3…（从 1 开始，不是从 0 开始） -->
+		<!-- 4. 给每一行加一个唯一标识（用商品自己的字段） -->
+		<!-- 5. 往数组里再加一条数据、刷新页面，表格应该自动多一行 -->
+		<!-- 检查点：页面出现 4 行，序号是 1~4；表头还在、没有被循环掉 -->
+		<!-- ============================================ -->
+
+		<div id="app">
+			<table>
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>商品名</th>
+						<th>价格</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- 数据行写在这里 -->
+
+				</tbody>
+			</table>
+		</div>
+
+		<!-- 在下面写你的代码： -->
+		<script type="module">
+			import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
+
+		</script>
+	</body>
+</html>
