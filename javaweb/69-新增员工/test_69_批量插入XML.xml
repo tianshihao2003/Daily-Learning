@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.EmpExprMapper">
+
+    <!-- ======================================================================
+         素材（不用改，照着理解即可）
+         ======================================================================
+         工程：tlias-web-management（SpringBoot 3.2.x + MyBatis + MySQL，Java 17）
+         数据库：MySQL，库名 tlias；用户名/密码用你自己 MySQL 的
+                 （课程示例是 root / 1234，动手时把 password 换成你自己的）
+
+         emp_expr 表（员工工作经历）字段：
+           id       int unsigned  主键、自增       （ID）
+           emp_id   int unsigned                   （员工ID，关联 emp.id）
+           begin    date                           （开始时间）
+           end      date                           （结束时间）
+           company  varchar(50)                    （公司名称）
+           job      varchar(50)                    （职位）
+
+         Mapper 接口 com.itheima.mapper.EmpExprMapper 里的方法：
+           void insertBatch(List<EmpExpr> exprList);   // 批量保存员工的工作经历信息
+
+         实体类 com.itheima.pojo.EmpExpr 的属性：
+           id Integer / empId Integer / begin LocalDate / end LocalDate
+           / company String / job String
+
+         XML 映射文件的三条规则（第 55 篇）：同包同名
+           （resources 下 com/itheima/mapper/EmpExprMapper.xml）、
+           namespace 是接口全限定名、语句 id 是接口方法名
+         ====================================================================== -->
+
+
+    <!-- ======================================================================
+         题目2-3：一条 SQL 批量保存多条工作经历
+         ======================================================================
+         需求：
+           用户一次可能填 0 段、1 段或多段工作经历，代码里拿到的是一个"工作经历对象的列表"。
+           要求用一条插入语句把列表里的每一条都写进 emp_expr 表：
+             - 列是 emp_id、开始时间、结束时间、公司、职位；
+             - 列表里有几条，SQL 的 values 后面就有几组括号，组与组之间用逗号隔开。
+
+         完成以下操作：
+         1. 在下面写出这条插入语句
+         2. 写完后回答：这段 SQL 里"固定不动"的部分是哪些？随列表长度变化的是哪部分？
+         3. （动手后）把服务端日志里真正发给数据库的 SQL 抄下来，数一数有几组括号
+         ====================================================================== -->
+
+    <!-- 在下面写你的代码： -->
+
+
+    <!-- 第 2 步的回答：
+         固定不动的部分：
+         随列表长度变化的部分：
+
+         第 3 步的记录（日志里的 SQL）：
+    -->
+
+</mapper>
